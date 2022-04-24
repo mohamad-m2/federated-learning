@@ -21,7 +21,7 @@
 6. Batch layer experiments
 7. an extension idea (includes an autoencoder and a gan )
 
-## still missing or can pe improved
+## still missing or can be improved
 1. group normalization layer
 2. the experiments tackeled only heteroginity of labels and it asumed all clients have same nb of samples ( client data size imbalance could be tackeled)
 3. all the experiments are conducted on a valdation set , the test set is still untouched for a final comparison 
