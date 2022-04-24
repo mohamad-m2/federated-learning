@@ -8,7 +8,7 @@
    - divide dataset among client
    - implement FedAvg baseline
 
-3. Ablation studies: study the variations occurring when modifying theclients’ local data distribution and the value of the FL parameters.
+3. Ablation studies: study the variations occurring when modifying the clients’ local data distribution and the value of the FL parameters.
 4. Normalization layers : study the effect of adding batch normalization layer and group normalization
 5. Time for your personal contribution! : extension idea / any contribution
 
