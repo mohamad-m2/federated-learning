@@ -121,7 +121,7 @@ def prepare_data_loader(data_m,transform,validation_fraction=0,centralized=True,
   # or divide data before assignment to the client for centralized testing , validation distribution in a centralized way should have iid 
   # conditions with the whole data , while for client_server it follows the ditribution of clients
 
-  if(validation_fraction!=0 and (centralized_testing or centralized)): #in case we want to divide the data to training and validation the function will return 2 loaders first for training and second for validation
+  if(validation_fraction!=0 and (centralized or centralized_testing)): #in case we want to divide the data to training and validation the function will return 2 loaders first for training and second for validation
     index_t,index_v=divide_validation_training(data_m,validation_fraction)
     data_train=[data_m[i] for i in index_t]
     data_val=[data_m[i] for i in index_v]
@@ -179,11 +179,11 @@ def prepare_data_loader(data_m,transform,validation_fraction=0,centralized=True,
       loaders.append(data_set_train_client_k)
   
 
-  if(validation_fraction!=0 and (centralized_testing or centralized)):
+  if(validation_fraction!=0 and  (centralized or centralized_testing)):
     data_set_val=data_set(data_val,transform)
     loaders.append(DataLoader(data_set_val,batch_size=256,shuffle=True,num_workers=4))
   else:
-    if (validation_fraction!=0):
+    if (validation_fraction!=0 and not centralized_testing):
       train_sets=[]
       val_sets=[]
       for i in loaders:
