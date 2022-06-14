@@ -52,6 +52,11 @@ def read_data(path,train=True):
         for j,k in enumerate(dict_temp[b'labels']):
           image=torch.from_numpy(dict_temp[b'data'][j].reshape((1,3,32,32)).astype('float32'))
           data.append((k,image))
+    else:
+       dict_temp=unpickle(path+'/test_batch')
+       for j,k in enumerate(dict_temp[b'labels']):
+          image=torch.from_numpy(dict_temp[b'data'][j].reshape((1,3,32,32)).astype('float32'))
+          data.append((k,image))
   return data
 
 
