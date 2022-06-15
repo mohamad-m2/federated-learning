@@ -112,8 +112,8 @@ class LeNet_BatchNorm(nn.Module):
 
 
 class LeNet_GroupNorm(nn.Module):
-    def init(self,input_channel,num_group,output_size):
-        super(LeNet_GroupNorm,self).init()
+    def __init__(self,input_channel,num_group,output_size):
+        super(LeNet_GroupNorm,self).__init__()
               
         self.conv1 = nn.Conv2d(in_channels=input_channel,out_channels=6,kernel_size=(5,5),padding=0,stride=1)
         self.GN1=nn.GroupNorm(num_group, 6)
