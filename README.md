@@ -33,9 +33,6 @@
 - when **alpha** `the parameter controlling heteroginity among clients` is not specified, it is equal to 1 (default value) *you can encouter that sometimes in the name of image files or inside the presentation*
 - sorry for the image names
 
-## code functions descriptions
- *to be filled*
-
 ## Materials
 <a id="1">[1]</a> Google AI Blog, Federated Learning: [Collaborative Machine Learning without Centralized
 Training Data](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html).
